@@ -11,6 +11,10 @@ Sistema de gestão para ONGs de proteção animal desenvolvido com Next.js e Tai
 - **Axios** - Cliente HTTP para requisições à API
 
 ## 📋 Funcionalidades Implementadas
+## UI Screenshots
+
+### Home
+![Home Page](https://github.com/user-attachments/assets/7ae5512b-dba2-4bb0-b50c-c62041494f40)
 
 ### 1. Gestão de Animais
 - ✅ Cadastro de animais com informações completas
@@ -19,11 +23,23 @@ Sistema de gestão para ONGs de proteção animal desenvolvido com Next.js e Tai
 - ✅ Página de detalhes com histórico médico completo
 - ✅ Registro de consultas, vacinas, cirurgias e exames
 
+### Gestão de Animais UI
+![Animal List](https://github.com/user-attachments/assets/7229f25e-45d8-4162-9c4e-fca28bfe4db5)
+
+### Formulário de registro de Animais UI
+![New Animal Form](https://github.com/user-attachments/assets/7a652dc3-636f-4180-8682-e84401f3735b)
+
 ### 2. Gestão de Voluntários
 - ✅ Cadastro de voluntários
 - ✅ Gerenciamento de preferências de atuação
 - ✅ Sistema de gamificação com pontos e badges
 - ✅ Perfil do voluntário com tarefas atribuídas
+
+### Gestão de Voluntários UI
+![Volunteer List](https://github.com/user-attachments/assets/cbfdada4-ffae-4f39-9bbf-4e029cbd9312)
+
+### Registro de Voluntários com preferências UI   
+![New Volunteer Form](https://github.com/user-attachments/assets/3c32efd5-8996-4f7b-a849-0eda096ae9ff)
 
 ### 3. Gestão de Tarefas
 - ✅ Criação de tarefas com prioridade
