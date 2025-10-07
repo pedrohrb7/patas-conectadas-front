@@ -163,7 +163,7 @@ NEXT_PUBLIC_API_URL=http://localhost:8080/api
 - Código modular e reutilizável
 - Padrões de projeto consistentes
 
-## 🚀 Próximos Passos (Sugestões)
+## 🚀 Próximos Passos
 
 1. Implementar autenticação JWT
 2. Adicionar testes unitários e E2E

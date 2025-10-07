@@ -52,8 +52,11 @@ Sistema de gestão para ONGs de proteção animal desenvolvido com Next.js e Tai
 
 ### Pré-requisitos
 
-- Node.js 18+ instalado
-- API backend rodando em `http://localhost:8080/api`
+- Node.js 22 lts (jod) instalado
+- API backend rodando em `http://localhost:3001`
+    - Veja o repositório da API: [patas-conectadas-api]('https://github.com/pedrohrb7/patas-conectadas-api')
+- Git instalado
+
 
 ### Instalação
 
@@ -75,7 +78,7 @@ cp .env.example .env.local
 
 Edite o arquivo `.env.local` e configure a URL da API:
 ```
-NEXT_PUBLIC_API_URL=http://localhost:8080/api
+NEXT_PUBLIC_API_URL=http://localhost:3001
 ```
 
 ### Executando o Projeto
