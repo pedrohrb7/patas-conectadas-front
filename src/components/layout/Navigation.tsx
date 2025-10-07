@@ -7,6 +7,7 @@ const navigation = [
   { name: 'Início', href: '/' },
   { name: 'Animais', href: '/animais' },
   { name: 'Voluntários', href: '/voluntarios' },
+  { name: 'Tarefas', href: '/tarefas' },
   { name: 'Doações', href: '/doacoes' },
   { name: 'Eventos', href: '/eventos' },
   { name: 'Adoções', href: '/adocoes' },
