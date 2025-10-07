@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Animal } from '@/services/animalService';
-import { getAnimals, updateAnimalStatus } from '@/services/animalsService';
+import { animalService } from '@/services/animalService';
 
 const statusColors = {
   disponivel: 'bg-green-100 text-green-800',
@@ -32,7 +32,7 @@ export default function AnimaisPage() {
   const loadAnimais = async () => {
     try {
       setLoading(true);
-      const data = await getAnimals();
+      const data = await animalService.getAll();
       setAnimais(data);
       setError(null);
     } catch (err) {
@@ -45,7 +45,7 @@ export default function AnimaisPage() {
 
   const handleStatusChange = async (id: number, status: Animal['status']) => {
     try {
-      await updateAnimalStatus(String(id), status);
+      await animalService.updateStatus(id, status);
       await loadAnimais();
     } catch (err) {
       alert('Erro ao atualizar status');
@@ -56,6 +56,7 @@ export default function AnimaisPage() {
   const filteredAnimais = filter === 'todos'
     ? animais
     : animais.filter(a => a.status === filter);
+  console.log('filteredAnimais', filteredAnimais);
 
   if (loading) {
     return (
@@ -102,7 +103,7 @@ export default function AnimaisPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredAnimais.map((animal) => (
-          <div key={animal.id} className="bg-white rounded-lg shadow-md p-6">
+          <div key={animal.id_animal} className="bg-white rounded-lg shadow-md p-6">
             <div className="flex justify-between items-start mb-4">
               <h2 className="text-xl font-semibold text-gray-900">{animal.nome}</h2>
               <span className={`px-2 py-1 rounded-full text-xs font-medium ${statusColors[animal.status]}`}>

@@ -40,6 +40,7 @@ export default function AnimalDetalhesPage() {
 
   const loadAnimal = async () => {
     try {
+      console.log('params ', params);
       const data = await animalService.getById(Number(params.id));
       setAnimal(data);
     } catch (error) {
@@ -104,7 +105,7 @@ export default function AnimalDetalhesPage() {
 
         <div className="bg-white rounded-lg shadow-md p-6 mb-6">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">{animal.nome}</h1>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <div>
               <p className="text-gray-600">
@@ -123,7 +124,7 @@ export default function AnimalDetalhesPage() {
             </div>
             <div>
               <p className="text-gray-600">
-                <span className="font-medium">Status:</span> {statusLabels[animal.status]}
+                <span className="font-medium">Status:</span> {statusLabels[animal.id_status]}
               </p>
             </div>
           </div>
