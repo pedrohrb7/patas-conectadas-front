@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Animal, animalService } from '@/services/animalService';
+import { Animal } from '@/services/animalService';
+import { getAnimals, updateAnimalStatus } from '@/services/animalsService';
 
 const statusColors = {
   disponivel: 'bg-green-100 text-green-800',
@@ -31,7 +32,7 @@ export default function AnimaisPage() {
   const loadAnimais = async () => {
     try {
       setLoading(true);
-      const data = await animalService.getAll();
+      const data = await getAnimals();
       setAnimais(data);
       setError(null);
     } catch (err) {
@@ -44,7 +45,7 @@ export default function AnimaisPage() {
 
   const handleStatusChange = async (id: number, status: Animal['status']) => {
     try {
-      await animalService.updateStatus(id, status);
+      await updateAnimalStatus(String(id), status);
       await loadAnimais();
     } catch (err) {
       alert('Erro ao atualizar status');
@@ -52,8 +53,8 @@ export default function AnimaisPage() {
     }
   };
 
-  const filteredAnimais = filter === 'todos' 
-    ? animais 
+  const filteredAnimais = filter === 'todos'
+    ? animais
     : animais.filter(a => a.status === filter);
 
   if (loading) {
@@ -108,7 +109,7 @@ export default function AnimaisPage() {
                 {statusLabels[animal.status]}
               </span>
             </div>
-            
+
             <div className="space-y-2 mb-4">
               <p className="text-gray-600">
                 <span className="font-medium">Espécie:</span> {animal.especie}

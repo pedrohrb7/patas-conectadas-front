@@ -1,12 +1,22 @@
 import api from './api';
 
-interface Animal {
-  id: string;
-  name: string;
+export interface Animal {
+  id?: number;
+  nome: string;
+  especie: string;
+  raca?: string;
+  idade?: number;
+  status: 'disponivel' | 'adotado' | 'tratamento' | 'acolhimento';
+  descricao?: string;
+  historicoMedico?: HistoricoMedico[];
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
-interface MedicalHistory {
+export interface HistoricoMedico {
+  id?: number;
+  data: string;
+  descricao: string;
+  veterinario?: string;
+  tipo: 'consulta' | 'vacina' | 'cirurgia' | 'exame' | 'outro';
 }
 
 export const getAnimals = async (): Promise<Animal[]> => {
@@ -33,7 +43,7 @@ export const deleteAnimal = async (id: string): Promise<void> => {
   await api.delete(`/animals/${id}`);
 };
 
-export const getAnimalMedicalHistory = async (id: string): Promise<MedicalHistory[]> => {
+export const getAnimalMedicalHistory = async (id: string): Promise<HistoricoMedico[]> => {
   const response = await api.get(`/animals/${id}/medical-history`);
   return response.data;
 };
